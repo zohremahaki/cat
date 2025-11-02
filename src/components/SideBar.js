@@ -1,13 +1,26 @@
-import React from 'react';
-import { SideBarContainer } from './MainPage.styled';
-
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchCatsBreeds } from "../features/catsBreeds/catsBreedsSlice";
+import { SideBarContainer, UlStyle } from "./MainPage.styled";
 const SideBar = () => {
+  const dispatch = useDispatch();
+  const breed = useSelector((state) => state.breed.list);
+  const status = useSelector((state) => state.breed.status);
+
+  useEffect(() => {
+    dispatch(fetchCatsBreeds());
+  }, [dispatch]);
+  if (status === "loading") return <p>Loading...</p>;
+
   return (
     <SideBarContainer>
-        <div>111</div>
-        <div>11122</div>
-        <div>1112233</div>
-      
+      <UlStyle>
+        {breed.map((item) => (
+          <li>
+            <p key={item.id}>{item.name}</p>
+          </li>
+        ))}
+      </UlStyle>
     </SideBarContainer>
   );
 };
