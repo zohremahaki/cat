@@ -15,13 +15,18 @@ export const SideBarContainer = styled.div`
 `;
 export const MainContentAreaContainer = styled.div`
   background-color: #e5e5e5;
-  padding: 5rem 15rem 0 15rem;
+  padding: 5rem 2rem 0 4rem;
+  display: grid;
+  grid-template-columns: 6fr 0.5fr;
 `;
 
 export const CardsContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 3rem;
+  max-height: 85vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
 `;
 
 export const CardContainer = styled.div`
@@ -34,11 +39,8 @@ export const CardContainer = styled.div`
   overflow: hidden;
   display: grid;
   grid-template-rows: 1fr;
-  // display: flex;
-  // align-items: center;
-  // justify-content: center;
 `;
-export const ButtonContainer = styled.div`
+export const Buttons = styled.div`
   width: 10rem;
   height: 3rem;
   font-size: 1rem;
@@ -50,11 +52,17 @@ export const ButtonContainer = styled.div`
   background: #084e18ff;
   border-radius: 8px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  margin: 1rem auto ;
   &:hover {
     background: #0b6623ff;
   }
-
+`;
+export const ButtonContainer = styled.div`
+  display: flex;
+  margin-top: 40rem;
+  margin-left: 2rem;
+  justify-content: center;
+  align-items: center;
+  
 `;
 export const UlStyle = styled.ul`
   list-style-type: none;
