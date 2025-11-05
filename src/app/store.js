@@ -1,11 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
-import catsBreedsReducer from "../features/catsBreeds/catsBreedsSlice";
-
-import catsImagesReducer from "../features/catsImages/catsImagesSlice";
-
+import totalReducer from "../features/totalSlice/totalSlice";
 export const store = configureStore({
   reducer: {
-    cats: catsImagesReducer,
-    breed: catsBreedsReducer
+    total: totalReducer,
   },
 });

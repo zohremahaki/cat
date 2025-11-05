@@ -1,8 +1,16 @@
-import React from 'react';
-import { ButtonContainer } from './MainPage.styled';
+import { useDispatch } from "react-redux";
+import { increaseLimitImageCount } from "../features/totalSlice/totalSlice";
+import { ButtonContainer } from "./MainPage.styled";
+
 const Button = () => {
+  const dispatch = useDispatch();
+
   return (
-    <ButtonContainer>
+    <ButtonContainer
+      onClick={() => {
+        dispatch(increaseLimitImageCount(10));
+      }}
+    >
       LOAD MORE...
     </ButtonContainer>
   );

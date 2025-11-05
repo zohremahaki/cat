@@ -1,25 +1,29 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchCats } from "../features/catsImages/catsImagesSlice";
 import { CardContainer, CardsContainer, StyledImage } from "./MainPage.styled";
+
+import { fetchCatsList } from "../features/totalSlice/totalSlice";
+
 const CatCard = () => {
   const dispatch = useDispatch();
-  const cats = useSelector((state) => state.cats.list);
-  const status = useSelector((state) => state.cats.status);
+
+  const cats = useSelector((state) => state.total.listCats);
+  const limitImageCount = useSelector((state) => state.total.limitImageCount);
+  const status = useSelector((state) => state.total.statusCats);
+  const selectedBreed = useSelector((state) => state.total.selectedBreed);
 
   useEffect(() => {
-    dispatch(fetchCats());
-  }, [dispatch]);
+    dispatch(fetchCatsList({ breedId: selectedBreed, limit: limitImageCount }));
+  }, [selectedBreed, limitImageCount, dispatch]);
+
   if (status === "loading") return <p>Loading...</p>;
+  // console.log("limitImageCount:", limitImageCount);
+
   return (
     <CardsContainer>
       {cats.map((item) => (
-        <CardContainer>
-          <StyledImage
-            src={`${item.url}`}
-            alt="cat"
-            key={item.id}
-          ></StyledImage>
+        <CardContainer key={item.id + item.index}>
+          <StyledImage src={`${item.url}`} alt="cat"></StyledImage>
         </CardContainer>
       ))}
     </CardsContainer>
