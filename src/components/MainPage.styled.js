@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const MainPageContainer = styled.div`
   display: grid;
-  grid-template-columns: 1fr 4fr;
+  grid-template-columns: .55fr 4fr;
   height: 100vh;
   background-color: #e0e0e0;
 `;
@@ -15,23 +15,22 @@ export const SideBarContainer = styled.div`
 `;
 export const MainContentAreaContainer = styled.div`
   background-color: #e5e5e5;
-  padding: 5rem 2rem 0 4rem;
-  display: grid;
-  grid-template-columns: 6fr 0.5fr;
+  padding: 5rem .75rem 0 2rem;
 `;
 
 export const CardsContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 3rem;
-  max-height: 85vh;
+  max-height: 70vh;
   overflow-y: scroll;
   overflow-x: hidden;
+  padding: 1rem 0;
 `;
 
 export const CardContainer = styled.div`
-  width: 15rem;
-  height: 15rem;
+  width: 20rem;
+  height: 20rem;
   background: url(${(props) => props.bg}) center/cover no-repeat;
   border-radius: 10px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -44,25 +43,24 @@ export const Buttons = styled.div`
   width: 10rem;
   height: 3rem;
   font-size: 1rem;
-  color: #e7faebff;
+  color: #808383ff;
   text-align: center;
   line-height: 3rem;
   cursor: pointer;
   font-weight: bold;
-  background: #084e18ff;
+  background: #031a08ff;
   border-radius: 8px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   &:hover {
-    background: #0b6623ff;
+    background: #053612ff;
   }
 `;
 export const ButtonContainer = styled.div`
   display: flex;
-  margin-top: 40rem;
-  margin-left: 2rem;
+  margin-top: 3rem;
+  // margin-left: 2rem;
   justify-content: center;
   align-items: center;
-  
 `;
 export const UlStyle = styled.ul`
   list-style-type: none;

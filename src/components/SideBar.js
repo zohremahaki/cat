@@ -13,7 +13,7 @@ const SideBar = () => {
 
   useEffect(() => {
     dispatch(fetchCatsBreeds());
-  }, [dispatch]);
+  }, []);
 
   return (
     <SideBarContainer>
