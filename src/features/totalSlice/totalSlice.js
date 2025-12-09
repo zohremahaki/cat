@@ -38,42 +38,24 @@ const totalSlice = createSlice({
     setCatsBreeds(state, action) {
       state.selectedBreed = action.payload;
       state.listCats = [];
-      state.limitImageCount = 10; 
+      state.limitImageCount = 10;
     },
     setListCats(state, action) {
       state.listCats = action.payload;
     },
-    increaseLimitImageCount(state, action) {
-      state.limitImageCount += action.payload;
-    },
+
   },
 
   extraReducers: (builder) => {
     builder
-      .addCase(fetchCatsBreeds.pending, (state) => {
-        state.statusBreeds = "loading";
-      })
       .addCase(fetchCatsBreeds.fulfilled, (state, action) => {
         state.statusBreeds = "succeeded";
         state.listBreeds = action.payload;
       })
-      .addCase(fetchCatsBreeds.rejected, (state, action) => {
-        state.statusBreeds = "failed";
-        state.error = action.error.message;
-      })
 
-      // Cats Images
-      .addCase(fetchCatsList.pending, (state) => {
-        state.statusCats = "loading";
-      })
       .addCase(fetchCatsList.fulfilled, (state, action) => {
         state.statusCats = "succeeded";
-        // state.listCats = action.payload;
         state.listCats = [...state.listCats, ...action.payload];
-      })
-      .addCase(fetchCatsList.rejected, (state, action) => {
-        state.statusCats = "failed";
-        state.error = action.error.message;
       });
   },
 });

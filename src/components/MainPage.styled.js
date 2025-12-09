@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const MainPageContainer = styled.div`
   display: grid;
-  grid-template-columns: .55fr 4fr;
+  grid-template-columns: 0.55fr 4fr;
   height: 100vh;
   background-color: #e0e0e0;
 `;
@@ -15,7 +15,7 @@ export const SideBarContainer = styled.div`
 `;
 export const MainContentAreaContainer = styled.div`
   background-color: #e5e5e5;
-  padding: 5rem .75rem 0 2rem;
+  padding: 5rem 0.75rem 0 2rem;
 `;
 
 export const CardsContainer = styled.div`
@@ -39,26 +39,26 @@ export const CardContainer = styled.div`
   display: grid;
   grid-template-rows: 1fr;
 `;
-export const Buttons = styled.div`
-  width: 10rem;
-  height: 3rem;
+export const Buttons = styled.button`
   font-size: 1rem;
-  color: #808383ff;
+  color: #ccccccff;
   text-align: center;
-  line-height: 3rem;
+  // line-height: 3rem;
   cursor: pointer;
   font-weight: bold;
   background: #031a08ff;
   border-radius: 8px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  // box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   &:hover {
     background: #053612ff;
   }
+  position: fixed;
+  padding: 10px 20px;
+  left: 17rem;
+  bottom: 2rem;
 `;
 export const ButtonContainer = styled.div`
-  display: flex;
   margin-top: 3rem;
-  // margin-left: 2rem;
   justify-content: center;
   align-items: center;
 `;

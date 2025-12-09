@@ -1,15 +1,15 @@
-import { useDispatch } from "react-redux";
-import { increaseLimitImageCount } from "../features/totalSlice/totalSlice";
+import { useDispatch ,useSelector} from "react-redux";
+import { fetchCatsList } from "../features/totalSlice/totalSlice";
 import { ButtonContainer, Buttons } from "./MainPage.styled";
 
 const Button = () => {
   const dispatch = useDispatch();
-
+const selectedBreed = useSelector((state) => state.total.selectedBreed);
   return (
     <ButtonContainer>
       <Buttons
         onClick={() => {
-          dispatch(increaseLimitImageCount(10));
+              dispatch(fetchCatsList({ breedId: selectedBreed, limit: 10 }));
         }}
       >
         LOAD MORE...

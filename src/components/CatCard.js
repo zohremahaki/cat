@@ -14,10 +14,9 @@ const CatCard = () => {
 
   useEffect(() => {
     dispatch(fetchCatsList({ breedId: selectedBreed, limit: limitImageCount }));
-  }, [selectedBreed, limitImageCount, dispatch]);
+  }, [selectedBreed]);
 
   if (status === "loading") return <p>Loading...</p>;
-  // console.log("limitImageCount:", limitImageCount);
 
   return (
     <CardsContainer>
